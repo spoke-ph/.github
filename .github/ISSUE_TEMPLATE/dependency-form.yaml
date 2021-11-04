@@ -1,0 +1,82 @@
+name: 🤖 Dependency Upgrade (Form)
+description: Notes about upgrading a dependency. Form version.
+title: "[DEP] Upgrade <name> from <version> to <version>"
+labels: ["dependency"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please search to see if an issue already exists for the same dependency.
+        Close existing issues if they are no longer relevant.
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Commit or the version of this repo where you're trying the upgrade from
+      placeholder: 2.4.0 or commit 3df1234
+    validations:
+      required: true
+  - type: textarea
+    id: tools
+    attributes:
+      label: Tools
+      description: Versions of tools in your environment
+      placeholder: e.g. node 14.16.1, npm 14.6.1
+    validations:
+      required: true
+  - type: textarea
+    id: upgrade-steps
+    attributes:
+      label: Your Upgrade Steps and Problems
+      description: |
+        What did you do exactly after you checkout the commit or version above? Include the exact version of each dependency you've tried to upgrade to in each step e.g.
+
+        1. Upgrade 'foo' to x.x.x
+        2. Run '...' and it asks me to upgrade 'bar' to at least x.y.z
+        3. Upgrade 'bar' to x.y.z
+        4. Run '...' again
+        5. See error...
+      placeholder: |
+        1. Upgrade 'foo' to x.x.x
+        2. Run '...' and it asks me to upgrade 'bar' to at least x.y.z
+        3. Upgrade 'bar' to x.y.z
+        4. Run '...' again
+        5. See error...
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Log or Output
+      description: Provide some relevant logs or output. This will be automatically formatted into code, so no need for backticks.
+      render: shell
+  - type: textarea
+    id: what-tried
+    attributes:
+      label: What You've Tried
+      description: What have you tried to fix the problems you encountered above? Include as much information as you can.
+      placeholder: |
+        1. Fix the tests by changing `ApolloMockProvider` to blah
+
+        ```js
+        // An example snippet goes here
+        ```
+
+        **Outcome**: More things exploded with this new error 'Aryo help meeee!!!'
+
+        2. Add this config to jest config file
+
+        ```json
+        {
+          uselessConfig: true
+        }
+        ```
+
+        **Outcome**: Nothing changed
+    validations:
+      required: true
+  - type: textarea
+    id: anything-else
+    attributes:
+      label: Anything Else
+      description: Links? References? Anything else you found on the internet that might be useful for next person who attempts the upgrade!
