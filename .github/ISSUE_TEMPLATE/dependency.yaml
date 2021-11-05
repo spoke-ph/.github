@@ -1,5 +1,5 @@
-name: 🤖 Dependency Upgrade (Form)
-description: Notes about upgrading a dependency. Form version.
+name: 🤖 Dependency Upgrade
+description: Notes about upgrading a dependency
 title: "[DEP] Upgrade <name> from <version> to <version>"
 labels: ["dependency"]
 body:
